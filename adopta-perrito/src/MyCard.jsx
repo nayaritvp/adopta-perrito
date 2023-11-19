@@ -1,17 +1,16 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Tags from './Tags';
 
-function MyCard() {
+const MyCard = (props) => {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://hips.hearstapps.com/hmg-prod/images/raza-perro-pequen-o-yorkipoo-646c6df595f5c.jpeg" />
+      <Card.Img className="card-img" variant="top" src={props.link} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Nombre: {props.name}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+            <p>Detalle: {props.details}</p>
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Tags text={props.tagText} color={props.tagColor} />
       </Card.Body>
     </Card>
   );
